@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArionDev — Craft Brands & Digital Experiences</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════════════ -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="#home" class="navbar__logo" aria-label="ArionDev home">
+        <div class="navbar__logo-icon">
+          <img src="assets/image/dev.png" alt="ArionDev Logo" />
+        </div>
+        <span class="navbar__logo-text">Arion<span>Dev</span></span>
+      </a>
+
+      <!-- Nav links -->
+      <nav aria-label="Main navigation">
+        <ul class="navbar__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#process">How we work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a href="#contact" class="navbar__cta">Contact Us</a>
+
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════ -->
+  <main>
+  <section id="home" class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+
+      <!-- Copy -->
+      <div class="hero__copy">
+
+        <h1 id="hero-title" class="hero__title">
+          BUILDING MODERN<br>
+          <span>WEBSITES</span><br>
+          THAT CONVERT
+        </h1>
+
+        <p class="hero__subtitle">
+          Elevate your brand with exceptional design solutions. From branding to UI,
+          we bring your vision to life with tailored digital services.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contact" class="btn-primary">
+            Let's talk
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#portfolio" class="btn-outline">Solutions for Brand Identity</a>
+        </div>
+      </div>
+
+      <!-- Image + floating cards -->
+      <div class="hero__image-wrap">
+        <div class="hero__image-frame">
+          <img src="assets/image/gwh.png" alt="ArionDev team photo" />
+        </div>
+
+        <!-- Floating: clients -->
+        <div class="hero__float hero__float--clients">
+          <div class="hero__float-num">250+</div>
+          <div class="hero__float-label">Satisfied Clients</div>
+          <div class="hero__float-avatars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span>+</span>
+          </div>
+        </div>
+
+        <!-- Floating: growth -->
+        <div class="hero__float hero__float--growth">
+          <div class="hero__float-sub">Growth Rate</div>
+          <div class="hero__float-num hero__float-num--accent">40%</div>
+          <div class="hero__float-label">Increased revenues</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Diagonal accent band with marquee -->
+    <div class="hero__band-wrap" aria-hidden="true">
+      <div class="hero__band-shadow"></div>
+      <div class="hero__band">
+        <div class="marquee">
+          <!-- Group 1 -->
+          <div class="marquee__group">
+            <span class="marquee__item--band">App Design</span>
+            <span class="marquee__item--band">Website Design</span>
+            <span class="marquee__item--band">Dashboard</span>
+            <span class="marquee__item--band">Wireframe</span>
+            <span class="marquee__item--band">UI/UX Design</span>
+            <span class="marquee__item--band">Branding</span>
+          </div>
+          <!-- Group 2 (duplicate for seamless loop) -->
+          <div class="marquee__group" aria-hidden="true">
+            <span class="marquee__item--band">App Design</span>
+            <span class="marquee__item--band">Website Design</span>
+            <span class="marquee__item--band">Dashboard</span>
+            <span class="marquee__item--band">Wireframe</span>
+            <span class="marquee__item--band">UI/UX Design</span>
+            <span class="marquee__item--band">Branding</span>
+          </div>
+          <!-- Group 3 (extra duplicate for safety) -->
+          <div class="marquee__group" aria-hidden="true">
+            <span class="marquee__item--band">App Design</span>
+            <span class="marquee__item--band">Website Design</span>
+            <span class="marquee__item--band">Dashboard</span>
+            <span class="marquee__item--band">Wireframe</span>
+            <span class="marquee__item--band">UI/UX Design</span>
+            <span class="marquee__item--band">Branding</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       ABOUT
+       ═══════════════════════════════════════════════════ -->
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="about__inner">
+
+      <!-- Image -->
+      <div class="about__image-wrap">
+        <div class="img-placeholder" role="img" aria-label="ArionDev team photo placeholder">
+          <div class="img-placeholder__inner">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                 stroke="#94a3b8" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <p>Team photo here</p>
+          </div>
+        </div>
+
+        <div class="about__stat-float">
+          <div class="num">5+</div>
+          <div class="lbl">Years Experience</div>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="about__copy">
+        <span class="section-label">About us</span>
+
+        <h2 id="about-title" class="section-title">
+          Meet ArionDev:<br>Your Design Partners
+        </h2>
+
+        <p class="section-body">
+          We're not just designers — we're creators, problem-solvers, and your brand's best friends.
+          At ArionDev, we live and breathe design, from captivating visuals to seamless digital experiences.
+        </p>
+        <p class="section-body">
+          Think of us as an extension of your team, ready to bring your ideas to life with
+          precision, creativity, and passion.
+        </p>
+
+        <!-- Growth card -->
+        <div class="about__growth-card">
+          <div>
+            <div class="about__growth-num">40%</div>
+            <div class="about__growth-lbl">Increased growth revenues</div>
+          </div>
+
+          <div class="about__tags" aria-label="Services">
+            <span class="about__tag">Marketing</span>
+            <span class="about__tag">Web Design</span>
+            <span class="about__tag">Product Design</span>
+            <span class="about__tag">SEO</span>
+            <span class="about__tag">Brand Positioning</span>
+          </div>
+
+          <div class="about__avatar-placeholder" role="img" aria-label="Team avatar">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                 stroke="#94a3b8" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SERVICES RIBBON (Marquee)
+       ═══════════════════════════════════════════════════ -->
+  <div class="ribbon" aria-hidden="true" role="presentation">
+    <!-- Group 1 -->
+    <div class="ribbon__group">
+      <span class="ribbon__item">✦ Brand Identity</span>
+      <span class="ribbon__item">✦ Web Design</span>
+      <span class="ribbon__item">✦ UI/UX Design</span>
+      <span class="ribbon__item">✦ Product Design</span>
+      <span class="ribbon__item">✦ Frontend Dev</span>
+      <span class="ribbon__item">✦ Mobile App</span>
+      <span class="ribbon__item">✦ SEO Strategy</span>
+      <span class="ribbon__item">✦ Brand Positioning</span>
+    </div>
+    <!-- Group 2 -->
+    <div class="ribbon__group">
+      <span class="ribbon__item">✦ Brand Identity</span>
+      <span class="ribbon__item">✦ Web Design</span>
+      <span class="ribbon__item">✦ UI/UX Design</span>
+      <span class="ribbon__item">✦ Product Design</span>
+      <span class="ribbon__item">✦ Frontend Dev</span>
+      <span class="ribbon__item">✦ Mobile App</span>
+      <span class="ribbon__item">✦ SEO Strategy</span>
+      <span class="ribbon__item">✦ Brand Positioning</span>
+    </div>
+    <!-- Group 3 (extra for seamless loop) -->
+    <div class="ribbon__group">
+      <span class="ribbon__item">✦ Brand Identity</span>
+      <span class="ribbon__item">✦ Web Design</span>
+      <span class="ribbon__item">✦ UI/UX Design</span>
+      <span class="ribbon__item">✦ Product Design</span>
+      <span class="ribbon__item">✦ Frontend Dev</span>
+      <span class="ribbon__item">✦ Mobile App</span>
+      <span class="ribbon__item">✦ SEO Strategy</span>
+      <span class="ribbon__item">✦ Brand Positioning</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       HOW WE WORK
+       ═══════════════════════════════════════════════════ -->
+  <section id="process" class="process" aria-labelledby="process-title">
+    <div class="process__inner">
+
+      <div class="process__header">
+        <span class="section-label">How we work</span>
+        <h2 id="process-title" class="section-title" style="max-width:500px">
+          Let us show you how we drive your brand to new heights
+        </h2>
+      </div>
+
+      <div class="process__steps">
+        <div class="process__connector" aria-hidden="true"></div>
+
+        <!-- Step 1 -->
+        <div class="process__step">
+          <div class="process__step-num process__step-num--primary" aria-hidden="true">01</div>
+          <div class="process__step-card">
+            <span class="process__step-tag">Define</span>
+            <h3 class="process__step-title">Discovery & Strategy</h3>
+            <p class="process__step-body">
+              We deep-dive into your brand, audience, and goals to craft a clear strategic roadmap
+              that guides every design decision.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process__step process__step--offset">
+          <div class="process__step-num process__step-num--dark" aria-hidden="true">02</div>
+          <div class="process__step-card">
+            <span class="process__step-tag">Design</span>
+            <h3 class="process__step-title">Creative Design</h3>
+            <p class="process__step-body">
+              Our designers bring concepts to life through wireframes, prototypes, and stunning
+              visual interfaces that captivate your audience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process__step">
+          <div class="process__step-num process__step-num--primary" aria-hidden="true">03</div>
+          <div class="process__step-card">
+            <span class="process__step-tag">Build</span>
+            <h3 class="process__step-title">Development</h3>
+            <p class="process__step-body">
+              Clean, scalable code meets pixel-perfect design. We build fast, accessible, and
+              responsive digital products ready to perform.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process__step process__step--offset">
+          <div class="process__step-num process__step-num--dark" aria-hidden="true">04</div>
+          <div class="process__step-card">
+            <span class="process__step-tag">Launch</span>
+            <h3 class="process__step-title">Launch & Support</h3>
+            <p class="process__step-body">
+              We launch with precision and stay by your side post-launch for optimisations,
+              updates, and continuous improvement.
+            </p>
+          </div>
+        </div>
+
+        <p class="process__done">✦ Ready to be delivered!</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SERVICES
+       ═══════════════════════════════════════════════════ -->
+  <section id="services" class="services" aria-labelledby="services-title">
+    <div class="services__inner">
+
+      <div class="services__header">
+        <span class="section-label section-label--dark">What we do</span>
+        <div class="services__header-row">
+          <h2 id="services-title" class="section-title section-title--white">
+            We design meaningful not just quick impressions
+          </h2>
+          <a href="#contact" class="btn-primary--pill">Start a project →</a>
+        </div>
+      </div>
+
+      <div class="services__grid">
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Brand Identity</h3>
+          <p class="service-card__body">
+            Logos, visual systems, and brand guidelines that make you instantly recognisable and memorable.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <polyline points="8 21 12 17 16 21"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">UI/UX Design</h3>
+          <p class="service-card__body">
+            User-centred interfaces and experiences that are beautiful, intuitive, and conversion-focused.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Web Design</h3>
+          <p class="service-card__body">
+            Stunning, high-performance websites that represent your brand and drive real business results.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Mobile App Design</h3>
+          <p class="service-card__body">
+            Seamless Android/iOS app designs that delight users and keep them coming back.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Frontend Development</h3>
+          <p class="service-card__body">
+            Clean, modern code with React, Tailwind, and more — turning designs into pixel-perfect reality.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="#1a7a8a" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Software Development</h3>
+          <p class="service-card__body">
+            Full-stack solutions and web applications built for performance, security, and scalability.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       PORTFOLIO
+       ═══════════════════════════════════════════════════ -->
+  <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+    <div class="portfolio__inner">
+
+      <div class="portfolio__header">
+        <div>
+          <span class="section-label">Portfolio</span>
+          <h2 id="portfolio-title" class="section-title">
+            Explore our most<br>successful projects
+          </h2>
+        </div>
+        <a href="#" class="btn-outline--pill">All projects →</a>
+      </div>
+
+      <div class="portfolio__grid">
+
+        <!-- Project 1 -->
+        <article class="project-card bg-teal-gradient">
+          <div class="project-card__inner">
+            <span class="project-card__tag project-card__tag--primary">Web Design</span>
+            <div>
+              <h3 class="project-card__title" style="color:#111318">Brand &amp; Identity System</h3>
+              <p class="project-card__sub" style="color:#6b7280">E-commerce platform redesign</p>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <a href="#">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Project 2 (wide) -->
+        <article class="project-card project-card--wide bg-slate-gradient">
+          <div class="project-card__inner">
+            <span class="project-card__tag project-card__tag--dark">UI/UX Design</span>
+            <div>
+              <h3 class="project-card__title" style="color:#111318">AI Product Dashboard</h3>
+              <p class="project-card__sub" style="color:#6b7280">SaaS Analytics Platform</p>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <a href="#">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Project 3 (wide, dark) -->
+        <article class="project-card project-card--wide bg-dark-gradient">
+          <div class="project-card__inner">
+            <span class="project-card__tag project-card__tag--ghost">Mobile App</span>
+            <div>
+              <h3 class="project-card__title" style="color:#fff">FinTech Mobile Experience</h3>
+              <p class="project-card__sub" style="color:rgba(255,255,255,0.5)">iOS &amp; Android banking app</p>
+            </div>
+          </div>
+          <div class="project-card__overlay"
+               style="background:linear-gradient(to top,rgba(26,122,138,0.7),transparent)">
+            <a href="#">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card bg-yellow-gradient">
+          <div class="project-card__inner">
+            <span class="project-card__tag project-card__tag--dark">Branding</span>
+            <div>
+              <h3 class="project-card__title" style="color:#111318">Startup Brand Package</h3>
+              <p class="project-card__sub" style="color:#6b7280">Complete brand identity</p>
+            </div>
+          </div>
+          <div class="project-card__overlay">
+            <a href="#">View Project →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       TESTIMONIALS
+       ═══════════════════════════════════════════════════ -->
+  <section class="testimonials" aria-labelledby="testimonials-title">
+    <div class="testimonials__inner">
+
+      <div class="testimonials__header">
+        <span class="section-label">Reviews</span>
+        <h2 id="testimonials-title" class="section-title">
+          Here's what people say<br>about our work
+        </h2>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <p class="testimonial-card__body">
+            ArionDev transformed our brand completely. The design is stunning, modern, and exactly
+            what we envisioned. They truly listened and delivered beyond expectations.
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"
+                 style="background:linear-gradient(135deg,#1a7a8a,#0f5c6b)"
+                 aria-hidden="true">JD</div>
+            <div>
+              <div class="testimonial-card__name">John D.</div>
+              <div class="testimonial-card__role">CEO, TechStartup</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <p class="testimonial-card__body">
+            Working with ArionDev was seamless. Their process is clear, communication is excellent,
+            and the final product is a website we're proud to show everyone.
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"
+                 style="background:linear-gradient(135deg,#374151,#111318)"
+                 aria-hidden="true">SA</div>
+            <div>
+              <div class="testimonial-card__name">Sarah A.</div>
+              <div class="testimonial-card__role">Marketing Director</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <p class="testimonial-card__body">
+            The team at ArionDev has an eye for detail that's rare to find. Our app redesign
+            increased user retention by 60%. Truly outstanding work and great people.
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"
+                 style="background:linear-gradient(135deg,#1a7a8a,#374151)"
+                 aria-hidden="true">MK</div>
+            <div>
+              <div class="testimonial-card__name">Mike K.</div>
+              <div class="testimonial-card__role">Product Lead, FinApp</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA BAND
+       ═══════════════════════════════════════════════════ -->
+  <section id="contact" class="cta" aria-labelledby="cta-title">
+    <div class="cta__inner">
+      <div class="cta__card">
+
+        <!-- Decorative rings -->
+        <div class="cta__ring cta__ring--1" aria-hidden="true"></div>
+        <div class="cta__ring cta__ring--2" aria-hidden="true"></div>
+        <div class="cta__ring cta__ring--3" aria-hidden="true"></div>
+
+        <div class="cta__content">
+          <p class="cta__eyebrow">— Let's start designing your project</p>
+          <h2 id="cta-title" class="cta__title">
+            Ready to transform your brand<br>into an irresistible style?
+          </h2>
+          <p class="cta__sub">Let's build something remarkable together.</p>
+          <a href="mailto:hello@ariondev.com" class="btn-primary--pill">
+            Send a message →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div>
+          <div class="footer__brand-logo">
+            <div class="footer__brand-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="3" y="5" width="14" height="2.5" rx="1.25" fill="white" transform="rotate(-15 3 5)"/>
+                <rect x="2" y="9" width="16" height="2.5" rx="1.25" fill="white" transform="rotate(-15 2 9)"/>
+                <rect x="1" y="13" width="16" height="2.5" rx="1.25" fill="white" transform="rotate(-15 1 13)"/>
+              </svg>
+            </div>
+            <span class="footer__brand-name">ArionDev</span>
+          </div>
+          <p class="footer__tagline">
+            Crafting brands and digital experiences that leave a lasting impression.
+          </p>
+        </div>
+
+        <!-- Navigate -->
+        <nav aria-label="Footer navigation">
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+          </ul>
+        </nav>
+
+        <!-- Support -->
+        <nav aria-label="Support links">
+          <p class="footer__col-title">Support</p>
+          <ul class="footer__links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social -->
+        <nav aria-label="Social media links">
+          <p class="footer__col-title">Social Media</p>
+          <ul class="footer__links">
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" rel="noopener noreferrer">Twitter / X</a></li>
+            <li><a href="#" rel="noopener noreferrer">Dribbble</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2025 ArionDev. All rights reserved.</span>
+        <span class="footer__copy">Designed with ♥ by ArionDev</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
