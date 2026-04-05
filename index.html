@@ -1,72 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ArioAdi — Craft Brands & Digital Experiences</title>
+  <title>ArioAdi — Craft Brands &amp; Digital Experiences</title>
+
+  <!-- Tailwind CDN (config must be inline before tailwind.css loads) -->
+  <script>
+    window.tailwind = window.tailwind || {};
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT: '#1a7a8a', dark: '#0f5c6b', darker: '#0c4a5a', light: '#e0f2f5' },
-            brand: { dark: '#111318', mid: '#1e2228', grey: '#6b7280', border: '#e5e7eb', light: '#f9fafb' },
+            primary: {
+              DEFAULT: '#1a7a8a',
+              dark:    '#0f5c6b',
+              darker:  '#0c4a5a',
+              light:   '#e0f2f5',
+            },
+            brand: {
+              dark:   '#111318',
+              mid:    '#1e2228',
+              grey:   '#6b7280',
+              border: '#e5e7eb',
+              light:  '#f9fafb',
+            },
             accent: '#fdb213',
           },
           fontFamily: {
-            display: ['"Bricolage Grotesque"', 'sans-serif'],
-            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Syne"', 'sans-serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
           },
           boxShadow: {
-            'float': '0 8px 32px rgba(0,0,0,0.12)',
-            'card': '4px 8px 24px rgba(0,0,0,0.06)',
-            'primary': '0 8px 24px rgba(26,122,138,0.28)',
+            float:   '0 8px 32px rgba(0,0,0,0.12)',
+            card:    '4px 8px 24px rgba(0,0,0,0.06)',
+            primary: '0 8px 24px rgba(26,122,138,0.28)',
           },
-          borderRadius: { 'card': '20px', 'xl2': '24px' },
+          borderRadius: {
+            card: '20px',
+            xl2:  '24px',
+          },
         },
       },
-    }
+    };
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Devicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Custom CSS (fonts + animations + helpers) -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    h1, h2, h3, h4, h5 { font-family: 'Bricolage Grotesque', sans-serif; }
-    .pattern-bg {
-      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cbd5e1' fill-opacity='0.3'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-    }
-  </style>
 </head>
+
 <body class="text-brand-dark bg-white overflow-x-hidden antialiased">
 
 
-<!-- ═══════════════════════════════════════════════════
-     1. NAVBAR
-     ═══════════════════════════════════════════════════ -->
-<div id="nav-wrapper" class="fixed top-0 left-0 right-0 z-50 flex justify-center px-0 pt-0 nav-transition">
-  <header id="nav-header" class="w-full max-w-none bg-white/90 backdrop-blur-md border-b border-brand-border shadow-none rounded-none nav-transition" role="banner">
-    <div id="nav-inner" class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-8 nav-transition">
-      <a href="#home" class="flex items-center gap-3 no-underline" aria-label="ArioAdi home">
-        <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center flex-shrink-0">
+<!-- ═══════════════════════════════════════════════ NAVBAR ═══ -->
+<div id="nav-wrapper"
+     class="fixed top-0 left-0 right-0 z-50 flex justify-center px-0 pt-0 nav-transition">
+  <header id="nav-header"
+          class="w-full max-w-none bg-white/90 backdrop-blur-md border-b border-brand-border shadow-none rounded-none nav-transition"
+          role="banner">
+    <div id="nav-inner"
+         class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-8 nav-transition">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 no-underline shrink-0" aria-label="ArioAdi home">
+        <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center shrink-0">
           <img src="assets/image/dev.png" alt="ArioAdi Logo" class="w-full h-full object-cover" />
         </div>
-        <span class="font-display text-xl font-bold tracking-tight text-brand-dark">Ario<span class="text-primary">Adi</span></span>
+        <span class="font-display text-xl font-bold tracking-tight text-brand-dark">
+          Ario<span class="text-primary">Adi</span>
+        </span>
       </a>
+
+      <!-- Desktop Nav -->
       <nav aria-label="Main navigation" class="hidden md:block">
         <ul class="flex items-center gap-8 list-none m-0 p-0">
-          <li><a href="#home"      class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium">Home</a></li>
-          <li><a href="#about"     class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium">About</a></li>
-          <li><a href="#services"  class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium">Services</a></li>
-          <li><a href="#portfolio" class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium">Portfolio</a></li>
-          <li><a href="#pricing"   class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium">Pricing</a></li>
+          <li><a href="#home"      class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about"     class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium" data-i18n="nav_about">About</a></li>
+          <li><a href="#services"  class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium" data-i18n="nav_services">Services</a></li>
+          <li><a href="#portfolio" class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="#pricing"   class="text-sm text-brand-grey hover:text-brand-dark transition-colors duration-200 font-medium" data-i18n="nav_pricing">Pricing</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="inline-flex items-center bg-brand-dark text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-primary hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
-        Contact Us
-      </a>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Language toggle -->
+        <button class="lang-btn" id="langToggle" aria-label="Toggle language" onclick="toggleLang()">
+          <span id="langLabel">EN</span>
+          <span class="lang-pill" id="langPill">ID</span>
+        </button>
+
+        <!-- CTA -->
+        <a href="#contact"
+           class="hidden sm:inline-flex items-center bg-brand-dark text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-primary hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+           data-i18n="nav_contact">
+          Hubungi Kami
+        </a>
+      </div>
+
     </div>
   </header>
 </div>
@@ -74,160 +111,145 @@
 
 <main>
 
-<!-- ═══════════════════════════════════════════════════
-     2. HERO
-     ═══════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════ HERO ═══ -->
 <section id="home" class="pt-32 pb-16 bg-white overflow-hidden" aria-labelledby="hero-title">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
     <div>
-      <h1 id="hero-title" class="font-display text-[clamp(2.8rem,5.5vw,5rem)] font-extrabold leading-[1.08] tracking-tight text-brand-dark mb-6">
-        BUILDING MODERN<br><span class="text-primary">WEBSITES</span><br>THAT CONVERT
+      <h1 id="hero-title"
+          class="font-display text-[clamp(2.8rem,5.5vw,5rem)] font-extrabold leading-[1.08] tracking-tight text-brand-dark mb-6">
+        <span data-i18n="hero_line1">MEMBANGUN WEBSITE</span><br>
+        <span class="text-primary" data-i18n="hero_line2">MODERN</span><br>
+        <span data-i18n="hero_line3">YANG MENGKONVERSI</span>
       </h1>
-      <p class="text-lg text-slate-500 leading-relaxed max-w-md mb-10 font-body">
-        Elevate your brand with exceptional design solutions. From branding to UI, we bring your vision to life with tailored digital services.
+      <p class="text-lg text-slate-500 leading-relaxed max-w-md mb-10 font-body" data-i18n="hero_sub">
+        Tingkatkan brand kamu dengan solusi desain terbaik. Dari branding hingga UI, kami wujudkan visimu dengan layanan digital yang dipersonalisasi.
       </p>
       <div class="flex flex-wrap items-center gap-4">
-        <a href="#contact" class="inline-flex items-center bg-brand-dark rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 group">
-          <span class="text-white text-base font-semibold font-body">Let's talk</span>
-          <span class="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="#contact"
+           class="inline-flex items-center bg-brand-dark rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 group">
+          <span class="text-white text-base font-semibold font-body" data-i18n="hero_cta1">Ayo ngobrol</span>
+          <span class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="#portfolio" class="inline-flex items-center bg-white border border-brand-border rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:border-brand-dark hover:shadow-md transition-all duration-300 group">
-          <span class="text-brand-dark text-base font-semibold font-body">Lihat Portfolio</span>
-          <span class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="#portfolio"
+           class="inline-flex items-center bg-white border border-brand-border rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:border-brand-dark hover:shadow-md transition-all duration-300 group">
+          <span class="text-brand-dark text-base font-semibold font-body" data-i18n="hero_cta2">Lihat Portfolio</span>
+          <span class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
       </div>
     </div>
+
+    <!-- Hero image + float cards -->
     <div class="relative">
       <div class="relative w-full aspect-square bg-slate-100 rounded-[24px] border border-slate-200 shadow-inner overflow-hidden">
-        <img src="assets/image/gwh.png" alt="ArioAdi team photo" class="w-full h-full object-cover object-center" />
+        <img src="assets/image/gwh.png" alt="ArioAdi team" class="w-full h-full object-cover object-center" />
       </div>
+      <!-- stat card top-right -->
       <div class="float-card absolute -top-5 -right-5 bg-white border border-slate-100 rounded-2xl shadow-float p-5 min-w-[180px] z-20">
         <div class="font-display text-3xl font-extrabold text-brand-dark">250+</div>
-        <div class="text-xs font-medium text-slate-400 mt-1">Satisfied Clients</div>
+        <div class="text-xs font-medium text-slate-400 mt-1" data-i18n="stat_clients">Klien Puas</div>
         <div class="flex items-center mt-3">
           <span class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] font-bold text-white"></span>
           <span class="w-8 h-8 rounded-full border-2 border-white bg-primary-dark flex items-center justify-center text-[10px] font-bold text-white -ml-2"></span>
           <span class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500 -ml-2">+</span>
         </div>
       </div>
+      <!-- stat card bottom-left -->
       <div class="float-card absolute -bottom-5 -left-5 bg-white border border-slate-100 rounded-2xl shadow-float p-5 min-w-[180px] z-20">
-        <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Growth Rate</div>
+        <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1" data-i18n="stat_growth_label">Growth Rate</div>
         <div class="font-display text-4xl font-extrabold text-primary">40%</div>
-        <div class="text-xs font-medium text-slate-400 mt-1">Increased revenues</div>
+        <div class="text-xs font-medium text-slate-400 mt-1" data-i18n="stat_growth_sub">Peningkatan Revenue</div>
       </div>
     </div>
   </div>
 
-  <!-- Marquee ribbon -->
+  <!-- Hero Marquee ribbon -->
   <div class="relative w-full h-28 mt-24 mb-10" aria-hidden="true">
     <div class="absolute left-0 right-0 h-14 top-1/2 -translate-y-1/2 overflow-visible pointer-events-none z-0">
-      <div style="position:absolute;inset:0;width:110vw;left:-5vw;background:#0c4a5a;transform:rotate(-2deg);box-shadow:0 6px 24px rgba(0,0,0,0.25);"></div>
+      <div class="band-tilt" style="background:#0c4a5a;"></div>
     </div>
-    <div class="absolute left-0 right-0 h-14 top-1/2 -translate-y-1/2 overflow-hidden pointer-events-auto z-10 shadow-md" style="background:#1a7a8a;">
-      <div class="marquee-container flex items-center w-full h-full overflow-hidden">
-        <div class="marquee-group flex items-center gap-6 pr-6">
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">App Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Website Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Dashboard</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Wireframe</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">UI/UX Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Branding</span>
-        </div>
-        <div class="marquee-group flex items-center gap-6 pr-6" aria-hidden="true">
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">App Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Website Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Dashboard</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Wireframe</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">UI/UX Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Branding</span>
-        </div>
-        <div class="marquee-group flex items-center gap-6 pr-6" aria-hidden="true">
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">App Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Website Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Dashboard</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Wireframe</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">UI/UX Design</span>
-          <span class="font-display text-lg font-bold uppercase tracking-widest px-10 whitespace-nowrap" style="color:rgba(255,255,255,0.80)">Branding</span>
-        </div>
-      </div>
+    <div class="marquee-wrap absolute left-0 right-0 h-14 top-1/2 -translate-y-1/2 overflow-hidden z-10 shadow-md" style="background:#1a7a8a;">
+      <div id="heroMarquee" class="marquee-track to-left flex items-center h-full gap-0"></div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     3. TRUST BAR — angka statistik singkat
-     ═══════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════ TRUST BAR ═══ -->
 <section class="py-14 bg-brand-light border-y border-brand-border" aria-label="Statistics">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div>
         <div class="font-display text-4xl font-extrabold text-brand-dark mb-1">250+</div>
-        <div class="text-sm text-brand-grey">Klien Puas</div>
+        <div class="text-sm text-brand-grey" data-i18n="trust_clients">Klien Puas</div>
       </div>
       <div>
         <div class="font-display text-4xl font-extrabold text-primary mb-1">3+</div>
-        <div class="text-sm text-brand-grey">Tahun Pengalaman</div>
+        <div class="text-sm text-brand-grey" data-i18n="trust_exp">Tahun Pengalaman</div>
       </div>
       <div>
         <div class="font-display text-4xl font-extrabold text-brand-dark mb-1">300+</div>
-        <div class="text-sm text-brand-grey">Proyek Selesai</div>
+        <div class="text-sm text-brand-grey" data-i18n="trust_projects">Proyek Selesai</div>
       </div>
       <div>
         <div class="font-display text-4xl font-extrabold text-primary mb-1">40%</div>
-        <div class="text-sm text-brand-grey">Rata-rata Peningkatan Revenue</div>
+        <div class="text-sm text-brand-grey" data-i18n="trust_revenue">Rata-rata Peningkatan Revenue</div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     4. ABOUT
-     ═══════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════ ABOUT ═══ -->
 <section id="about" class="py-24 bg-white" aria-labelledby="about-title">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
     <div class="relative">
-      <div class="h-96 rounded-card bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-400 text-sm font-medium pattern-bg relative overflow-hidden" role="img" aria-label="Team photo placeholder">
-        <div class="relative z-10 flex flex-col items-center gap-2">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <p>Team photo here</p>
-        </div>
+      <div class="h-96 rounded-card bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative overflow-hidden" role="img" aria-label="Team photo placeholder">
+        <img 
+          src="assets/image/saya2.JPG" 
+          alt="Foto Saya" 
+          class="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+        
+        <div class="absolute inset-0 bg-black/10"></div>
       </div>
       <div class="absolute -bottom-5 -right-5 bg-white border border-brand-border rounded-2xl px-5 py-4 shadow-card z-10">
         <div class="font-display text-2xl font-extrabold text-primary">5+</div>
-        <div class="text-xs text-brand-grey mt-0.5">Years Experience</div>
+        <div class="text-xs text-brand-grey mt-0.5" data-i18n="about_exp">Tahun Pengalaman</div>
       </div>
     </div>
+
     <div>
-      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">About us</span>
-      <h2 id="about-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark mb-5">
-        Meet ArioAdi:<br>Your Design Partners
+      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="about_tag">Tentang kami</span>
+      <h2 id="about-title"
+          class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark mb-5"
+          data-i18n="about_title">
+        Kenalan dengan ArioAdi:<br>Mitra Desain Kamu
       </h2>
-      <p class="text-[0.9375rem] text-brand-grey leading-relaxed mb-4">
-        We're not just designers — we're creators, problem-solvers, and your brand's best friends. At ArioAdi, we live and breathe design, from captivating visuals to seamless digital experiences.
+      <p class="text-[0.9375rem] text-brand-grey leading-relaxed mb-4" data-i18n="about_p1">
+        Kami bukan sekadar desainer — kami adalah kreator, pemecah masalah, dan sahabat terbaik brand kamu.
       </p>
-      <p class="text-[0.9375rem] text-brand-grey leading-relaxed">
-        Think of us as an extension of your team, ready to bring your ideas to life with precision, creativity, and passion.
+      <p class="text-[0.9375rem] text-brand-grey leading-relaxed" data-i18n="about_p2">
+        Anggap kami sebagai perpanjangan tim kamu, siap mewujudkan ide-idemu dengan presisi, kreativitas, dan semangat.
       </p>
       <div class="bg-brand-dark rounded-2xl px-8 py-7 mt-8 flex flex-wrap items-center justify-between gap-5">
         <div>
           <div class="font-display text-5xl font-extrabold text-white leading-none">40%</div>
-          <div class="text-sm text-white/40 mt-1">Increased growth revenues</div>
+          <div class="text-sm text-white/40 mt-1" data-i18n="about_stat">Rata-rata peningkatan revenue klien</div>
         </div>
         <div class="flex flex-wrap gap-2 max-w-[260px]">
-          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]">Marketing</span>
-          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]">Web Design</span>
-          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]">Product Design</span>
-          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]">SEO</span>
-          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]">Brand Positioning</span>
+          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]" data-i18n="tag_webdesign">Creative Developer</span>
+          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]" data-i18n="tag_webdev">Scalable Web Apps</span>
+          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]" data-i18n="tag_app">Cross-platform Dev</span>
+          <span class="border border-white/15 bg-white/5 text-white/70 rounded-full px-4 py-1.5 text-[0.8125rem]" data-i18n="tag_brand">System Design</span>
         </div>
-        <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center shrink-0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         </div>
       </div>
     </div>
@@ -235,366 +257,278 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     5. SERVICES
-     ═══════════════════════════════════════════════════ -->
-<!-- Services ribbon -->
-<div class="bg-gradient-to-r from-primary-darker via-primary to-primary-darker w-full overflow-hidden flex py-3.5" aria-hidden="true">
-  <div class="marquee-container flex items-center w-full overflow-hidden">
-    <div class="marquee-group flex items-center gap-4 pr-4">
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Identity</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Web Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ UI/UX Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Product Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Frontend Dev</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Mobile App</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ SEO Strategy</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Positioning</span>
-    </div>
-    <div class="marquee-group flex items-center gap-4 pr-4" aria-hidden="true">
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Identity</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Web Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ UI/UX Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Product Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Frontend Dev</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Mobile App</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ SEO Strategy</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Positioning</span>
-    </div>
-    <div class="marquee-group flex items-center gap-4 pr-4" aria-hidden="true">
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Identity</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Web Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ UI/UX Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Product Design</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Frontend Dev</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Mobile App</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ SEO Strategy</span>
-      <span class="flex-none inline-flex items-center gap-1.5 border border-white/20 text-white text-sm font-medium px-5 py-1.5 rounded-full whitespace-nowrap hover:bg-white hover:text-primary transition-all duration-300 cursor-default">✦ Brand Positioning</span>
-    </div>
+<!-- ════════════════════════════════════ SERVICES RIBBON ═══ -->
+<div class="w-full overflow-hidden py-3.5" style="background:linear-gradient(90deg,#0c4a5a,#1a7a8a,#0c4a5a);" aria-hidden="true">
+  <div class="marquee-wrap w-full overflow-hidden">
+    <div id="svcMarquee" class="marquee-track to-right flex items-center gap-4 h-full py-0.5"></div>
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ SERVICES ═══ -->
 <section id="services" class="py-24 bg-brand-dark text-white" aria-labelledby="services-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-16">
-      <span class="inline-block border border-white/15 text-white/50 rounded-full px-4 py-1 text-xs font-medium mb-4 tracking-wide">What we do</span>
+      <span class="inline-block border border-white/15 text-white/50 rounded-full px-4 py-1 text-xs font-medium mb-4 tracking-wide" data-i18n="svc_tag">Yang kami kerjakan</span>
       <div class="flex items-end justify-between flex-wrap gap-8">
-        <h2 id="services-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-white max-w-md">
-          We design meaningful not just quick impressions
+        <h2 id="services-title"
+            class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-white max-w-md"
+            data-i18n="svc_title">
+          Kami mendesain yang bermakna,<br>bukan sekadar kesan pertama
         </h2>
-        <a href="#contact" class="inline-flex items-center bg-white rounded-full pl-6 pr-2 py-2 gap-4 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 group">
-          <span class="text-brand-dark text-sm font-semibold font-body">Start a project</span>
-          <span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="#contact"
+           class="inline-flex items-center bg-white rounded-full pl-6 pr-2 py-2 gap-4 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 group">
+          <span class="text-brand-dark text-sm font-semibold font-body" data-i18n="svc_start">Mulai proyek</span>
+          <span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
       </div>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">Brand Identity</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Logos, visual systems, dan brand guidelines yang membuat kamu langsung dikenali dan diingat.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc1_title">Brand Identity</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc1_desc">Logo, visual system, dan brand guidelines yang membuat kamu langsung dikenali dan diingat.</p>
       </article>
+
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">UI/UX Design</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Interface yang indah, intuitif, dan fokus pada konversi — bukan sekadar bagus dipandang.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc2_title">UI/UX Design</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc2_desc">Interface yang indah, intuitif, dan fokus pada konversi — bukan sekadar bagus dipandang.</p>
       </article>
+
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">Web Design</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Website berkualitas tinggi yang merepresentasikan brand kamu dan menghasilkan bisnis nyata.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc3_title">Web Design</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc3_desc">Website berkualitas tinggi yang merepresentasikan brand kamu dan menghasilkan bisnis nyata.</p>
       </article>
+
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">Mobile App Design</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Desain app Android/iOS yang memanjakan pengguna dan membuat mereka terus kembali.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc4_title">Mobile App Design</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc4_desc">Desain app Android/iOS yang memanjakan pengguna dan membuat mereka terus kembali.</p>
       </article>
+
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">Frontend Development</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Kode bersih dan modern dengan React, Tailwind, dan lebih — desain jadi realita pixel-perfect.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc5_title">Frontend Development</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc5_desc">Kode bersih dan modern dengan React, Tailwind, dan lebih — desain jadi realita pixel-perfect.</p>
       </article>
+
       <article class="border border-white/10 rounded-2xl p-7 hover:bg-white/[0.04] hover:border-primary transition-all duration-300">
         <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a8a" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h3 class="font-display text-base font-bold text-white mb-2">Software Development</h3>
-        <p class="text-sm text-white/45 leading-relaxed">Solusi full-stack dan web apps yang dibangun untuk performa, keamanan, dan skalabilitas.</p>
+        <h3 class="font-display text-base font-bold text-white mb-2" data-i18n="svc6_title">Software Development</h3>
+        <p class="text-sm text-white/45 leading-relaxed" data-i18n="svc6_desc">Solusi full-stack dan web apps yang dibangun untuk performa, keamanan, dan skalabilitas.</p>
       </article>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     6. SKILLS / TECH STACK
-     ═══════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════ SKILLS ═══ -->
 <section id="skills" class="py-24 bg-brand-light" aria-labelledby="skills-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-14">
-      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">Tech Stack</span>
+      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="skills_tag">Tech Stack</span>
       <div class="flex items-end justify-between flex-wrap gap-6">
-        <h2 id="skills-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark">
-          Tools & teknologi<br>yang kami kuasai
+        <h2 id="skills-title"
+            class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark"
+            data-i18n="skills_title">
+          Tools &amp; teknologi<br>yang kami kuasai
         </h2>
-        <p class="text-sm text-brand-grey max-w-xs leading-relaxed">Kami bekerja dengan stack modern untuk hasil yang cepat, scalable, dan maintainable.</p>
+        <p class="text-sm text-brand-grey max-w-xs leading-relaxed" data-i18n="skills_sub">
+          Kami bekerja dengan stack modern untuk hasil yang cepat, scalable, dan maintainable.
+        </p>
       </div>
     </div>
 
-    <!-- 
-      CATATAN: Letakkan file icon di folder assets/image/icons/
-      Format yang disarankan: html5.svg, css3.svg, javascript.svg, dst.
-      Bisa download gratis di: https://devicons.github.io atau https://simpleicons.org
-    -->
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-4">
-
+      <!-- Each skill card -->
       <!-- HTML5 -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">HTML5</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="98" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1)"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="98"></div></div>
       </div>
-
       <!-- CSS3 -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">CSS3</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="96" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.08s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="96"></div></div>
       </div>
-
       <!-- JavaScript -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">JavaScript</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="92" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.12s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="92"></div></div>
       </div>
-
       <!-- React -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">React</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="85" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.16s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="85"></div></div>
       </div>
-
       <!-- Tailwind -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Tailwind</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="95" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.20s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="95"></div></div>
       </div>
-
       <!-- PHP -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">PHP</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="90" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.24s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="90"></div></div>
       </div>
-
       <!-- Laravel -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Laravel</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="87" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.28s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="87"></div></div>
       </div>
-
       <!-- CodeIgniter -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg" alt="CodeIgniter" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg" alt="CodeIgniter" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">CodeIgniter</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="88" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.32s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="88"></div></div>
       </div>
-
       <!-- MySQL -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">MySQL</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="88" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.36s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="88"></div></div>
       </div>
-
       <!-- Figma -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Figma</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="93" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.40s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="93"></div></div>
       </div>
-
       <!-- Git -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Git</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="90" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.44s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="90"></div></div>
       </div>
-
       <!-- WordPress -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" alt="WordPress" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" alt="WordPress" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">WordPress</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="84" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.48s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="84"></div></div>
       </div>
-
-      <!-- Node.js -->
+      <!-- C# -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">C#</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="72" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.52s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="72"></div></div>
       </div>
-
-      <!-- TypeScript -->
+      <!-- Flutter -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Flutter</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="74" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.56s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="74"></div></div>
       </div>
-
       <!-- Bootstrap -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Bootstrap</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="91" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.60s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="91"></div></div>
       </div>
-
-      <!-- Photoshop -->
+      <!-- Canva -->
       <div class="group flex flex-col items-center gap-3 p-5 bg-white border border-brand-border rounded-2xl hover:border-primary hover:-translate-y-1.5 hover:shadow-card transition-all duration-300 cursor-default">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Photoshop" class="w-10 h-10 object-contain" />
-        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" class="w-10 h-10 object-contain" />
         <span class="font-display font-bold text-xs text-brand-dark text-center leading-tight">Canva</span>
-        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
-          <div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="80" style="transition:width 1.2s cubic-bezier(0.22,1,0.36,1) 0.64s"></div>
-        </div>
+        <div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden"><div class="skill-bar-inner h-full bg-gradient-to-r from-primary to-primary-dark rounded-full w-0" data-pct="80"></div></div>
       </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     7. PORTFOLIO
-     ═══════════════════════════════════════════════════ -->
+<!-- ═════════════════════════════════════════ PORTFOLIO ═══ -->
 <section id="portfolio" class="py-24 bg-white" aria-labelledby="portfolio-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex items-end justify-between flex-wrap gap-6 mb-12">
       <div>
-        <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">Portfolio</span>
-        <h2 id="portfolio-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark">
-          Explore our most<br>successful projects
+        <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="port_tag">Portfolio</span>
+        <h2 id="portfolio-title"
+            class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark"
+            data-i18n="port_title">
+          Jelajahi proyek-proyek<br>terbaik kami
         </h2>
       </div>
-      <a href="#" class="inline-flex items-center bg-white border border-brand-border rounded-full pl-6 pr-2 py-2 gap-4 hover:-translate-y-0.5 hover:border-brand-dark hover:shadow-md transition-all duration-300 group">
-        <span class="text-brand-dark text-sm font-semibold font-body">All projects</span>
-        <span class="w-9 h-9 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href="#"
+         class="inline-flex items-center bg-white border border-brand-border rounded-full pl-6 pr-2 py-2 gap-4 hover:-translate-y-0.5 hover:border-brand-dark hover:shadow-md transition-all duration-300 group">
+        <span class="text-brand-dark text-sm font-semibold font-body" data-i18n="port_all">Semua proyek</span>
+        <span class="w-9 h-9 rounded-full bg-brand-dark flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </span>
       </a>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <article class="relative overflow-hidden rounded-card aspect-[4/3] cursor-pointer group bg-gradient-to-br from-[#e0f2f5] to-[#b2dfdb]">
         <div class="relative z-10 p-6 h-full flex flex-col justify-between">
-          <span class="self-start text-[0.72rem] font-semibold bg-primary text-white px-3 py-1 rounded-full">Web Design</span>
-          <div><h3 class="font-display text-[1.1rem] font-bold text-brand-dark">Brand &amp; Identity System</h3><p class="text-sm text-gray-500 mt-1">E-commerce platform redesign</p></div>
+          <span class="self-start text-[0.72rem] font-semibold bg-primary text-white px-3 py-1 rounded-full" data-i18n="port_cat1">Web Design</span>
+          <div>
+            <h3 class="font-display text-[1.1rem] font-bold text-brand-dark" data-i18n="port_item1_title">Brand &amp; Identity System</h3>
+            <p class="text-sm text-gray-500 mt-1" data-i18n="port_item1_sub">Redesign platform e-commerce</p>
+          </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
-          <a href="#" class="font-display font-bold text-sm text-white">View Project →</a>
+          <a href="#" class="font-display font-bold text-sm text-white" data-i18n="port_view">Lihat Proyek →</a>
         </div>
       </article>
+
       <article class="relative overflow-hidden rounded-card aspect-[4/3] cursor-pointer group bg-gradient-to-br from-slate-100 to-slate-200 md:col-span-2">
         <div class="relative z-10 p-6 h-full flex flex-col justify-between">
-          <span class="self-start text-[0.72rem] font-semibold bg-brand-dark text-white px-3 py-1 rounded-full">UI/UX Design</span>
-          <div><h3 class="font-display text-[1.1rem] font-bold text-brand-dark">AI Product Dashboard</h3><p class="text-sm text-gray-500 mt-1">SaaS Analytics Platform</p></div>
+          <span class="self-start text-[0.72rem] font-semibold bg-brand-dark text-white px-3 py-1 rounded-full" data-i18n="port_cat2">UI/UX Design</span>
+          <div>
+            <h3 class="font-display text-[1.1rem] font-bold text-brand-dark" data-i18n="port_item2_title">AI Product Dashboard</h3>
+            <p class="text-sm text-gray-500 mt-1" data-i18n="port_item2_sub">Platform Analitik SaaS</p>
+          </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
-          <a href="#" class="font-display font-bold text-sm text-white">View Project →</a>
+          <a href="#" class="font-display font-bold text-sm text-white" data-i18n="port_view">Lihat Proyek →</a>
         </div>
       </article>
+
       <article class="relative overflow-hidden rounded-card aspect-[4/3] cursor-pointer group bg-gradient-to-br from-brand-dark to-brand-mid md:col-span-2">
         <div class="relative z-10 p-6 h-full flex flex-col justify-between">
-          <span class="self-start text-[0.72rem] font-semibold bg-primary/30 text-[#5bbfd0] border border-primary/40 px-3 py-1 rounded-full">Mobile App</span>
-          <div><h3 class="font-display text-[1.1rem] font-bold text-white">FinTech Mobile Experience</h3><p class="text-sm text-white/50 mt-1">iOS &amp; Android banking app</p></div>
+          <span class="self-start text-[0.72rem] font-semibold bg-primary/30 text-[#5bbfd0] border border-primary/40 px-3 py-1 rounded-full" data-i18n="port_cat3">Mobile App</span>
+          <div>
+            <h3 class="font-display text-[1.1rem] font-bold text-white" data-i18n="port_item3_title">FinTech Mobile Experience</h3>
+            <p class="text-sm text-white/50 mt-1" data-i18n="port_item3_sub">Aplikasi perbankan iOS &amp; Android</p>
+          </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
-          <a href="#" class="font-display font-bold text-sm text-white">View Project →</a>
+          <a href="#" class="font-display font-bold text-sm text-white" data-i18n="port_view">Lihat Proyek →</a>
         </div>
       </article>
+
       <article class="relative overflow-hidden rounded-card aspect-[4/3] cursor-pointer group bg-gradient-to-br from-[#fefce8] to-[#fef08a]">
         <div class="relative z-10 p-6 h-full flex flex-col justify-between">
-          <span class="self-start text-[0.72rem] font-semibold bg-brand-dark text-white px-3 py-1 rounded-full">Branding</span>
-          <div><h3 class="font-display text-[1.1rem] font-bold text-brand-dark">Startup Brand Package</h3><p class="text-sm text-gray-500 mt-1">Complete brand identity</p></div>
+          <span class="self-start text-[0.72rem] font-semibold bg-brand-dark text-white px-3 py-1 rounded-full" data-i18n="port_cat4">Branding</span>
+          <div>
+            <h3 class="font-display text-[1.1rem] font-bold text-brand-dark" data-i18n="port_item4_title">Startup Brand Package</h3>
+            <p class="text-sm text-gray-500 mt-1" data-i18n="port_item4_sub">Brand identity lengkap</p>
+          </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
-          <a href="#" class="font-display font-bold text-sm text-white">View Project →</a>
+          <a href="#" class="font-display font-bold text-sm text-white" data-i18n="port_view">Lihat Proyek →</a>
         </div>
       </article>
     </div>
@@ -602,111 +536,122 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     8. PROCESS / HOW WE WORK
-     ═══════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════ PROCESS ═══ -->
 <section id="process" class="py-24 bg-brand-light" aria-labelledby="process-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-16">
-      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">How we work</span>
-      <h2 id="process-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark max-w-lg">
+      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="proc_tag">Cara kami bekerja</span>
+      <h2 id="process-title"
+          class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark max-w-lg"
+          data-i18n="proc_title">
         Bagaimana kami mengerjakan proyekmu dari awal sampai selesai
       </h2>
     </div>
+
     <div class="relative max-w-2xl mx-auto">
       <div class="absolute left-8 top-10 bottom-10 w-px border-l-2 border-dashed border-brand-border" aria-hidden="true"></div>
+
+      <!-- Step 01 -->
       <div class="flex gap-8 mb-8">
-        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary ring-[6px] ring-primary/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">01</div>
+        <div class="shrink-0 w-16 h-16 rounded-full bg-primary ring-[6px] ring-primary/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">01</div>
         <div class="flex-1 bg-white border border-brand-border rounded-card p-7 shadow-card">
-          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3">Define</span>
-          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2">Discovery & Strategy</h3>
-          <p class="text-sm text-brand-grey leading-relaxed">Kami mendalami brand, audiens, dan tujuan bisnis kamu untuk membuat peta jalan strategis yang menjadi acuan setiap keputusan desain.</p>
+          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3" data-i18n="proc1_badge">Define</span>
+          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2" data-i18n="proc1_title">Discovery &amp; Strategy</h3>
+          <p class="text-sm text-brand-grey leading-relaxed" data-i18n="proc1_desc">Kami mendalami brand, audiens, dan tujuan bisnis kamu untuk membuat peta jalan strategis yang menjadi acuan setiap keputusan desain.</p>
         </div>
       </div>
+      <!-- Step 02 -->
       <div class="flex gap-8 mb-8 pl-12">
-        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary-dark ring-[6px] ring-primary-dark/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">02</div>
+        <div class="shrink-0 w-16 h-16 rounded-full bg-primary-dark ring-[6px] ring-primary-dark/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">02</div>
         <div class="flex-1 bg-white border border-brand-border rounded-card p-7 shadow-card">
-          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3">Design</span>
-          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2">Creative Design</h3>
-          <p class="text-sm text-brand-grey leading-relaxed">Dari wireframe hingga prototype visual yang memukau — semua dikerjakan di Figma dengan standar UI/UX terbaik.</p>
+          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3" data-i18n="proc2_badge">Design</span>
+          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2" data-i18n="proc2_title">Creative Design</h3>
+          <p class="text-sm text-brand-grey leading-relaxed" data-i18n="proc2_desc">Dari wireframe hingga prototype visual yang memukau — semua dikerjakan di Figma dengan standar UI/UX terbaik.</p>
         </div>
       </div>
+      <!-- Step 03 -->
       <div class="flex gap-8 mb-8">
-        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary ring-[6px] ring-primary/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">03</div>
+        <div class="shrink-0 w-16 h-16 rounded-full bg-primary ring-[6px] ring-primary/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">03</div>
         <div class="flex-1 bg-white border border-brand-border rounded-card p-7 shadow-card">
-          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3">Build</span>
-          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2">Development</h3>
-          <p class="text-sm text-brand-grey leading-relaxed">Kode bersih dan scalable bertemu desain pixel-perfect. Kami build produk digital yang cepat, accessible, dan siap perform.</p>
+          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3" data-i18n="proc3_badge">Build</span>
+          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2" data-i18n="proc3_title">Development</h3>
+          <p class="text-sm text-brand-grey leading-relaxed" data-i18n="proc3_desc">Kode bersih dan scalable bertemu desain pixel-perfect. Kami build produk digital yang cepat, accessible, dan siap perform.</p>
         </div>
       </div>
+      <!-- Step 04 -->
       <div class="flex gap-8 mb-8 pl-12">
-        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary-dark ring-[6px] ring-primary-dark/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">04</div>
+        <div class="shrink-0 w-16 h-16 rounded-full bg-primary-dark ring-[6px] ring-primary-dark/10 flex items-center justify-center z-10 relative font-display font-extrabold text-white text-sm">04</div>
         <div class="flex-1 bg-white border border-brand-border rounded-card p-7 shadow-card">
-          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3">Launch</span>
-          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2">Launch & Support</h3>
-          <p class="text-sm text-brand-grey leading-relaxed">Kami launch dengan presisi dan tetap menemani kamu pasca-launch untuk optimisasi, update, dan perbaikan berkelanjutan.</p>
+          <span class="inline-block bg-primary-light text-primary text-[0.7rem] font-bold uppercase tracking-widest rounded-full px-3 py-0.5 mb-3" data-i18n="proc4_badge">Launch</span>
+          <h3 class="font-display text-[1.1rem] font-bold text-brand-dark mb-2" data-i18n="proc4_title">Launch &amp; Support</h3>
+          <p class="text-sm text-brand-grey leading-relaxed" data-i18n="proc4_desc">Kami launch dengan presisi dan tetap menemani kamu pasca-launch untuk optimisasi, update, dan perbaikan berkelanjutan.</p>
         </div>
       </div>
-      <p class="text-center mt-6 font-display text-[1.1rem] font-bold text-primary border-b-2 border-primary pb-0.5 w-fit mx-auto">✦ Siap dikirimkan!</p>
+
+      <p class="text-center mt-6 font-display text-[1.1rem] font-bold text-primary border-b-2 border-primary pb-0.5 w-fit mx-auto" data-i18n="proc_done">✦ Siap dikirimkan!</p>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     9. TESTIMONIALS
-     ═══════════════════════════════════════════════════ -->
-<section class="py-24 bg-white overflow-hidden" aria-labelledby="testimonials-title">
+<!-- ══════════════════════════════════ TESTIMONIALS ═══ -->
+<section class="py-24 bg-white overflow-hidden" aria-labelledby="testi-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-12">
-      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">Reviews</span>
-      <h2 id="testimonials-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark">
+      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="testi_tag">Ulasan</span>
+      <h2 id="testi-title"
+          class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark"
+          data-i18n="testi_title">
         Kata mereka tentang<br>hasil kerja kami
       </h2>
     </div>
+
     <div class="relative h-[560px] grid grid-cols-3 gap-5 overflow-hidden">
       <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none"></div>
       <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
-      <!-- COL 1 naik -->
+
+      <!-- Col 1 — up -->
       <div class="overflow-hidden">
-        <div class="flex flex-col gap-4" style="animation: scrollUp 22s linear infinite;">
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Jujur awalnya ragu, takut hasilnya biasa aja. Eh ternyata beneran beda banget! Website toko online kita sekarang keliatan lebih profesional dan penjualan naik lumayan. Makasih ArioAdi!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">RH</div><div><div class="font-display font-bold text-sm text-brand-dark">Rizky Handoko</div><div class="text-[0.72rem] text-slate-400">Owner, Toko Batik Nusantara</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Tim ArioAdi responsif banget, WA dibalas cepet, revisi nggak dipersulit. Hasilnya memuaskan, desain logo kita sekarang udah keliatan kayak brand beneran. Recommended deh!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">SA</div><div><div class="font-display font-bold text-sm text-brand-dark">Siti Aminah</div><div class="text-[0.72rem] text-slate-400">Founder, Warung Kopi Siji</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Udah pakai jasa desainer lain sebelumnya, hasilnya mengecewakan. Nyoba ArioAdi dan langsung kapok pindah. Prosesnya jelas, hasilnya rapi, dan harganya masuk akal buat kualitas segini.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">BP</div><div><div class="font-display font-bold text-sm text-brand-dark">Bagas Pratama</div><div class="text-[0.72rem] text-slate-400">CEO, PT Maju Digital</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Landing page yang mereka bikin buat campaign kita beneran convert! Dari 100 pengunjung bisa 8-9 yang hubungi kita. Sebelumnya nggak nyampe 2. Luar biasa, langsung repeat order.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-teal-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">DK</div><div><div class="font-display font-bold text-sm text-brand-dark">Dewi Kartika</div><div class="text-[0.72rem] text-slate-400">Marketing, Properti Sejahtera</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <!-- dup -->
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Jujur awalnya ragu, takut hasilnya biasa aja. Eh ternyata beneran beda banget! Website toko online kita sekarang keliatan lebih profesional dan penjualan naik lumayan. Makasih ArioAdi!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">RH</div><div><div class="font-display font-bold text-sm text-brand-dark">Rizky Handoko</div><div class="text-[0.72rem] text-slate-400">Owner, Toko Batik Nusantara</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Tim ArioAdi responsif banget, WA dibalas cepet, revisi nggak dipersulit. Hasilnya memuaskan, desain logo kita sekarang udah keliatan kayak brand beneran. Recommended deh!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">SA</div><div><div class="font-display font-bold text-sm text-brand-dark">Siti Aminah</div><div class="text-[0.72rem] text-slate-400">Founder, Warung Kopi Siji</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Udah pakai jasa desainer lain sebelumnya, hasilnya mengecewakan. Nyoba ArioAdi dan langsung kapok pindah. Prosesnya jelas, hasilnya rapi, dan harganya masuk akal buat kualitas segini.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">BP</div><div><div class="font-display font-bold text-sm text-brand-dark">Bagas Pratama</div><div class="text-[0.72rem] text-slate-400">CEO, PT Maju Digital</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Landing page yang mereka bikin buat campaign kita beneran convert! Dari 100 pengunjung bisa 8-9 yang hubungi kita. Sebelumnya nggak nyampe 2. Luar biasa, langsung repeat order.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-teal-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">DK</div><div><div class="font-display font-bold text-sm text-brand-dark">Dewi Kartika</div><div class="text-[0.72rem] text-slate-400">Marketing, Properti Sejahtera</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
+        <div class="flex flex-col gap-4 testi-up">
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Jujur awalnya ragu, takut hasilnya biasa aja. Eh ternyata beneran beda banget! Website toko online kita sekarang keliatan lebih profesional dan penjualan naik lumayan. Makasih ArioAdi!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white shrink-0">RH</div><div><div class="font-display font-bold text-sm text-brand-dark">Rizky Handoko</div><div class="text-[0.72rem] text-slate-400">Owner, Toko Batik Nusantara</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Tim ArioAdi responsif banget, WA dibalas cepet, revisi nggak dipersulit. Hasilnya memuaskan, desain logo kita sekarang udah keliatan kayak brand beneran. Recommended deh!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white shrink-0">SA</div><div><div class="font-display font-bold text-sm text-brand-dark">Siti Aminah</div><div class="text-[0.72rem] text-slate-400">Founder, Warung Kopi Siji</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Udah pakai jasa desainer lain sebelumnya, hasilnya mengecewakan. Nyoba ArioAdi dan langsung kapok pindah. Prosesnya jelas, hasilnya rapi, dan harganya masuk akal buat kualitas segini.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">BP</div><div><div class="font-display font-bold text-sm text-brand-dark">Bagas Pratama</div><div class="text-[0.72rem] text-slate-400">CEO, PT Maju Digital</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Landing page yang mereka bikin buat campaign kita beneran convert! Dari 100 pengunjung bisa 8-9 yang hubungi kita. Sebelumnya nggak nyampe 2. Luar biasa, langsung repeat order.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-teal-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">DK</div><div><div class="font-display font-bold text-sm text-brand-dark">Dewi Kartika</div><div class="text-[0.72rem] text-slate-400">Marketing, Properti Sejahtera</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <!-- duplicate for loop -->
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Jujur awalnya ragu, takut hasilnya biasa aja. Eh ternyata beneran beda banget! Website toko online kita sekarang keliatan lebih profesional dan penjualan naik lumayan. Makasih ArioAdi!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white shrink-0">RH</div><div><div class="font-display font-bold text-sm text-brand-dark">Rizky Handoko</div><div class="text-[0.72rem] text-slate-400">Owner, Toko Batik Nusantara</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Tim ArioAdi responsif banget, WA dibalas cepet, revisi nggak dipersulit. Hasilnya memuaskan, desain logo kita sekarang udah keliatan kayak brand beneran. Recommended deh!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white shrink-0">SA</div><div><div class="font-display font-bold text-sm text-brand-dark">Siti Aminah</div><div class="text-[0.72rem] text-slate-400">Founder, Warung Kopi Siji</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Udah pakai jasa desainer lain sebelumnya, hasilnya mengecewakan. Nyoba ArioAdi dan langsung kapok pindah. Prosesnya jelas, hasilnya rapi, dan harganya masuk akal buat kualitas segini.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">BP</div><div><div class="font-display font-bold text-sm text-brand-dark">Bagas Pratama</div><div class="text-[0.72rem] text-slate-400">CEO, PT Maju Digital</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Landing page yang mereka bikin buat campaign kita beneran convert! Dari 100 pengunjung bisa 8-9 yang hubungi kita. Sebelumnya nggak nyampe 2. Luar biasa, langsung repeat order.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-teal-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">DK</div><div><div class="font-display font-bold text-sm text-brand-dark">Dewi Kartika</div><div class="text-[0.72rem] text-slate-400">Marketing, Properti Sejahtera</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
         </div>
       </div>
-      <!-- COL 2 turun -->
+
+      <!-- Col 2 — down -->
       <div class="overflow-hidden">
-        <div class="flex flex-col gap-4" style="animation: scrollDown 26s linear infinite;">
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kita UMKM kecil yang baru mau go digital, takutnya nggak dilayani dengan serius. Tapi ArioAdi malah sabar banget jelasin dari awal. Hasilnya website kita udah live dan keren banget!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">YW</div><div><div class="font-display font-bold text-sm text-brand-dark">Yanto Wibowo</div><div class="text-[0.72rem] text-slate-400">Pemilik, UD Sinar Jaya</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Desain UI dashboard internal kantor kita jauh lebih rapi sekarang. Karyawan juga jadi lebih mudah pakainya. ArioAdi ngerti kebutuhan bisnis, bukan cuma soal tampilan doang.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">NR</div><div><div class="font-display font-bold text-sm text-brand-dark">Nadia Rahayu</div><div class="text-[0.72rem] text-slate-400">IT Manager, Koperasi Makmur</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Brand identity klinik kami sekarang keliatan lebih terpercaya di mata pasien. Beberapa pasien baru bilang mereka tertarik karena liat Instagram kita yang sekarang. Hasilnya nyata!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-rose-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">DR</div><div><div class="font-display font-bold text-sm text-brand-dark">dr. Rina Susanti</div><div class="text-[0.72rem] text-slate-400">Direktur, Klinik Sehat Bersama</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Aplikasi mobile kita diredesign sama ArioAdi dan rating di Play Store langsung naik dari 3.6 jadi 4.5 dalam dua bulan. User banyak yang komen UI-nya jadi enak banget dipake.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">AF</div><div><div class="font-display font-bold text-sm text-brand-dark">Arief Fauzi</div><div class="text-[0.72rem] text-slate-400">CTO, Startup Logistik Cepat</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
+        <div class="flex flex-col gap-4 testi-down">
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kita UMKM kecil yang baru mau go digital, takutnya nggak dilayani dengan serius. Tapi ArioAdi malah sabar banget jelasin dari awal. Hasilnya website kita udah live dan keren banget!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">YW</div><div><div class="font-display font-bold text-sm text-brand-dark">Yanto Wibowo</div><div class="text-[0.72rem] text-slate-400">Pemilik, UD Sinar Jaya</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Desain UI dashboard internal kantor kita jauh lebih rapi sekarang. Karyawan juga jadi lebih mudah pakainya. ArioAdi ngerti kebutuhan bisnis, bukan cuma soal tampilan doang.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white shrink-0">NR</div><div><div class="font-display font-bold text-sm text-brand-dark">Nadia Rahayu</div><div class="text-[0.72rem] text-slate-400">IT Manager, Koperasi Makmur</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Brand identity klinik kami sekarang keliatan lebih terpercaya di mata pasien. Beberapa pasien baru bilang mereka tertarik karena liat Instagram kita. Hasilnya nyata!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-rose-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">DR</div><div><div class="font-display font-bold text-sm text-brand-dark">dr. Rina Susanti</div><div class="text-[0.72rem] text-slate-400">Direktur, Klinik Sehat Bersama</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Aplikasi mobile kita diredesign sama ArioAdi dan rating di Play Store langsung naik dari 3.6 jadi 4.5 dalam dua bulan. User banyak yang komen UI-nya jadi enak banget dipake.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">AF</div><div><div class="font-display font-bold text-sm text-brand-dark">Arief Fauzi</div><div class="text-[0.72rem] text-slate-400">CTO, Startup Logistik Cepat</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
           <!-- dup -->
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kita UMKM kecil yang baru mau go digital, takutnya nggak dilayani dengan serius. Tapi ArioAdi malah sabar banget jelasin dari awal. Hasilnya website kita udah live dan keren banget!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">YW</div><div><div class="font-display font-bold text-sm text-brand-dark">Yanto Wibowo</div><div class="text-[0.72rem] text-slate-400">Pemilik, UD Sinar Jaya</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Desain UI dashboard internal kantor kita jauh lebih rapi sekarang. Karyawan juga jadi lebih mudah pakainya. ArioAdi ngerti kebutuhan bisnis, bukan cuma soal tampilan doang.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">NR</div><div><div class="font-display font-bold text-sm text-brand-dark">Nadia Rahayu</div><div class="text-[0.72rem] text-slate-400">IT Manager, Koperasi Makmur</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Brand identity klinik kami sekarang keliatan lebih terpercaya di mata pasien. Beberapa pasien baru bilang mereka tertarik karena liat Instagram kita yang sekarang. Hasilnya nyata!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-rose-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">DR</div><div><div class="font-display font-bold text-sm text-brand-dark">dr. Rina Susanti</div><div class="text-[0.72rem] text-slate-400">Direktur, Klinik Sehat Bersama</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Aplikasi mobile kita diredesign sama ArioAdi dan rating di Play Store langsung naik dari 3.6 jadi 4.5 dalam dua bulan. User banyak yang komen UI-nya jadi enak banget dipake.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">AF</div><div><div class="font-display font-bold text-sm text-brand-dark">Arief Fauzi</div><div class="text-[0.72rem] text-slate-400">CTO, Startup Logistik Cepat</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kita UMKM kecil yang baru mau go digital, takutnya nggak dilayani dengan serius. Tapi ArioAdi malah sabar banget jelasin dari awal. Hasilnya website kita udah live dan keren banget!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">YW</div><div><div class="font-display font-bold text-sm text-brand-dark">Yanto Wibowo</div><div class="text-[0.72rem] text-slate-400">Pemilik, UD Sinar Jaya</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Desain UI dashboard internal kantor kita jauh lebih rapi sekarang. Karyawan juga jadi lebih mudah pakainya. ArioAdi ngerti kebutuhan bisnis, bukan cuma soal tampilan doang.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-display font-bold text-xs text-white shrink-0">NR</div><div><div class="font-display font-bold text-sm text-brand-dark">Nadia Rahayu</div><div class="text-[0.72rem] text-slate-400">IT Manager, Koperasi Makmur</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Brand identity klinik kami sekarang keliatan lebih terpercaya di mata pasien. Beberapa pasien baru bilang mereka tertarik karena liat Instagram kita. Hasilnya nyata!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-rose-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">DR</div><div><div class="font-display font-bold text-sm text-brand-dark">dr. Rina Susanti</div><div class="text-[0.72rem] text-slate-400">Direktur, Klinik Sehat Bersama</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Aplikasi mobile kita diredesign sama ArioAdi dan rating di Play Store langsung naik dari 3.6 jadi 4.5 dalam dua bulan. User banyak yang komen UI-nya jadi enak banget dipake.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">AF</div><div><div class="font-display font-bold text-sm text-brand-dark">Arief Fauzi</div><div class="text-[0.72rem] text-slate-400">CTO, Startup Logistik Cepat</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
         </div>
       </div>
-      <!-- COL 3 naik -->
+
+      <!-- Col 3 — up (faster) -->
       <div class="overflow-hidden">
-        <div class="flex flex-col gap-4" style="animation: scrollUp 20s linear infinite;">
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Pertama ketemu ArioAdi lewat rekomendasi teman, dan itu salah satu keputusan terbaik buat bisnis kita. Website company profile kita sekarang sering dipuji klien yang baru kenal kita.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">HS</div><div><div class="font-display font-bold text-sm text-brand-dark">Hendra Santoso</div><div class="text-[0.72rem] text-slate-400">Direktur, CV Berkah Konstruksi</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kami pesan paket branding lengkap — logo, warna, tipografi, sampai template sosmed. Hasilnya konsisten dan profesional banget. Sekarang konten kita jauh lebih gampang dibikin.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">FL</div><div><div class="font-display font-bold text-sm text-brand-dark">Fitri Larasati</div><div class="text-[0.72rem] text-slate-400">Brand Manager, Skincare Alami.id</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Deadline kita mepet banget, cuma 2 minggu. ArioAdi sanggup dan hasilnya nggak asal-asalan. Justru bagus banget. Serius tim yang handal dan bisa diandalkan pas situasi darurat.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">TP</div><div><div class="font-display font-bold text-sm text-brand-dark">Tommy Prasetyo</div><div class="text-[0.72rem] text-slate-400">Product Owner, EduTech Pintar</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Toko kita dulu sering dikira nggak resmi gara-gara tampilannya polos. Setelah ArioAdi rebranding, pelanggan makin percaya dan omzet bulan pertama langsung naik 30%. Mantap!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-cyan-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">MF</div><div><div class="font-display font-bold text-sm text-brand-dark">Maya Fitriani</div><div class="text-[0.72rem] text-slate-400">Owner, Butik Zahara Collection</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
+        <div class="flex flex-col gap-4 testi-up2">
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Pertama ketemu ArioAdi lewat rekomendasi teman, dan itu salah satu keputusan terbaik buat bisnis kita. Website company profile kita sekarang sering dipuji klien yang baru kenal kita.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">HS</div><div><div class="font-display font-bold text-sm text-brand-dark">Hendra Santoso</div><div class="text-[0.72rem] text-slate-400">Direktur, CV Berkah Konstruksi</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kami pesan paket branding lengkap — logo, warna, tipografi, sampai template sosmed. Hasilnya konsisten dan profesional banget. Sekarang konten kita jauh lebih gampang dibikin.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white shrink-0">FL</div><div><div class="font-display font-bold text-sm text-brand-dark">Fitri Larasati</div><div class="text-[0.72rem] text-slate-400">Brand Manager, Skincare Alami.id</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Deadline kita mepet banget, cuma 2 minggu. ArioAdi sanggup dan hasilnya nggak asal-asalan. Justru bagus banget. Serius tim yang handal dan bisa diandalkan pas situasi darurat.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">TP</div><div><div class="font-display font-bold text-sm text-brand-dark">Tommy Prasetyo</div><div class="text-[0.72rem] text-slate-400">Product Owner, EduTech Pintar</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Toko kita dulu sering dikira nggak resmi gara-gara tampilannya polos. Setelah ArioAdi rebranding, pelanggan makin percaya dan omzet bulan pertama langsung naik 30%. Mantap!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-cyan-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">MF</div><div><div class="font-display font-bold text-sm text-brand-dark">Maya Fitriani</div><div class="text-[0.72rem] text-slate-400">Owner, Butik Zahara Collection</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
           <!-- dup -->
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Pertama ketemu ArioAdi lewat rekomendasi teman, dan itu salah satu keputusan terbaik buat bisnis kita. Website company profile kita sekarang sering dipuji klien yang baru kenal kita.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">HS</div><div><div class="font-display font-bold text-sm text-brand-dark">Hendra Santoso</div><div class="text-[0.72rem] text-slate-400">Direktur, CV Berkah Konstruksi</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kami pesan paket branding lengkap — logo, warna, tipografi, sampai template sosmed. Hasilnya konsisten dan profesional banget. Sekarang konten kita jauh lebih gampang dibikin.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">FL</div><div><div class="font-display font-bold text-sm text-brand-dark">Fitri Larasati</div><div class="text-[0.72rem] text-slate-400">Brand Manager, Skincare Alami.id</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Deadline kita mepet banget, cuma 2 minggu. ArioAdi sanggup dan hasilnya nggak asal-asalan. Justru bagus banget. Serius tim yang handal dan bisa diandalkan pas situasi darurat.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">TP</div><div><div class="font-display font-bold text-sm text-brand-dark">Tommy Prasetyo</div><div class="text-[0.72rem] text-slate-400">Product Owner, EduTech Pintar</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
-          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Toko kita dulu sering dikira nggak resmi gara-gara tampilannya polos. Setelah ArioAdi rebranding, pelanggan makin percaya dan omzet bulan pertama langsung naik 30%. Mantap!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-cyan-600 flex items-center justify-center font-display font-bold text-xs text-white flex-shrink-0">MF</div><div><div class="font-display font-bold text-sm text-brand-dark">Maya Fitriani</div><div class="text-[0.72rem] text-slate-400">Owner, Butik Zahara Collection</div></div><div class="ml-auto text-amber-400 text-xs tracking-wide">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Pertama ketemu ArioAdi lewat rekomendasi teman, dan itu salah satu keputusan terbaik buat bisnis kita. Website company profile kita sekarang sering dipuji klien yang baru kenal kita.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">HS</div><div><div class="font-display font-bold text-sm text-brand-dark">Hendra Santoso</div><div class="text-[0.72rem] text-slate-400">Direktur, CV Berkah Konstruksi</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Kami pesan paket branding lengkap — logo, warna, tipografi, sampai template sosmed. Hasilnya konsisten dan profesional banget. Sekarang konten kita jauh lebih gampang dibikin.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-dark flex items-center justify-center font-display font-bold text-xs text-white shrink-0">FL</div><div><div class="font-display font-bold text-sm text-brand-dark">Fitri Larasati</div><div class="text-[0.72rem] text-slate-400">Brand Manager, Skincare Alami.id</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Deadline kita mepet banget, cuma 2 minggu. ArioAdi sanggup dan hasilnya nggak asal-asalan. Justru bagus banget. Serius tim yang handal dan bisa diandalkan pas situasi darurat.</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">TP</div><div><div class="font-display font-bold text-sm text-brand-dark">Tommy Prasetyo</div><div class="text-[0.72rem] text-slate-400">Product Owner, EduTech Pintar</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
+          <article class="bg-white border border-brand-border rounded-card p-6 shadow-card"><div class="text-3xl text-primary font-serif leading-none mb-3">"</div><p class="text-sm text-brand-grey leading-relaxed mb-5">Toko kita dulu sering dikira nggak resmi gara-gara tampilannya polos. Setelah ArioAdi rebranding, pelanggan makin percaya dan omzet bulan pertama langsung naik 30%. Mantap!</p><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-cyan-600 flex items-center justify-center font-display font-bold text-xs text-white shrink-0">MF</div><div><div class="font-display font-bold text-sm text-brand-dark">Maya Fitriani</div><div class="text-[0.72rem] text-slate-400">Owner, Butik Zahara Collection</div></div><div class="ml-auto text-amber-400 text-xs">★★★★★</div></div></article>
         </div>
       </div>
     </div>
@@ -714,104 +659,138 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     10. PRICING
-     ═══════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════ PRICING ═══ -->
 <section id="pricing" class="py-24 bg-brand-light" aria-labelledby="pricing-title">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-14 text-center">
-      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide">Harga Layanan</span>
-      <h2 id="pricing-title" class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark mb-3">
+      <span class="inline-block border border-brand-border rounded-full px-4 py-1 text-xs font-medium text-brand-grey mb-4 tracking-wide" data-i18n="price_tag">Harga Layanan</span>
+      <h2 id="pricing-title"
+          class="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold leading-tight text-brand-dark mb-3"
+          data-i18n="price_title">
         Investasi yang tepat<br>untuk brand kamu
       </h2>
-      <p class="text-sm text-brand-grey max-w-md mx-auto leading-relaxed">Harga transparan tanpa biaya tersembunyi. Konsultasi gratis sebelum deal.</p>
+      <p class="text-sm text-brand-grey max-w-md mx-auto leading-relaxed" data-i18n="price_sub">
+        Harga transparan tanpa biaya tersembunyi. Konsultasi gratis sebelum deal.
+      </p>
+      
+      <!-- Free Consultation Banner -->
+      <div class="mt-8 inline-block bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-full px-6 py-3">
+        <span class="text-sm font-semibold text-primary">✓ Konsultasi Gratis - Tidak ada biaya tersembunyi</span>
+      </div>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-      <!-- BASIC -->
+
+      <!-- Basic -->
       <div class="border border-brand-border rounded-card p-8 bg-white hover:-translate-y-1 hover:shadow-card transition-all duration-300">
-        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-brand-grey mb-4">Starter</span>
+        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-brand-grey mb-4" data-i18n="price1_tier">Starter</span>
         <h3 class="font-display text-xl font-extrabold text-brand-dark mb-1">Basic</h3>
-        <p class="text-xs text-brand-grey mb-5 leading-relaxed">Cocok untuk UMKM & personal brand yang baru mulai go digital.</p>
-        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 750K</span></div>
-        <p class="text-[0.72rem] text-slate-400 mb-6">Mulai dari · tergantung kompleksitas</p>
+        <p class="text-xs text-brand-grey mb-5 leading-relaxed" data-i18n="price1_desc">Cocok untuk UMKM &amp; personal brand yang baru mulai go digital.</p>
+        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 500K</span></div>
+        <p class="text-[0.72rem] text-slate-400 mb-6" data-i18n="price_note">Mulai dari · tergantung kompleksitas</p>
         <div class="h-px bg-brand-border mb-6"></div>
         <ul class="flex flex-col gap-3 mb-8">
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Landing page 1 halaman</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Desain responsif mobile</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Hingga 3x revisi</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Delivery 5–7 hari kerja</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Source file HTML/CSS</li>
-          <li class="flex items-start gap-2.5 text-sm text-slate-300"><span class="font-bold mt-0.5 flex-shrink-0">✕</span>Custom CMS/Backend</li>
-          <li class="flex items-start gap-2.5 text-sm text-slate-300"><span class="font-bold mt-0.5 flex-shrink-0">✕</span>SEO on-page setup</li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f1">Landing page 1 halaman</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f2">Desain responsif mobile</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f3">Hingga 3x revisi</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f4">Delivery 5–7 hari kerja</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f5">Source file HTML/CSS</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-300"><span class="font-bold mt-0.5 shrink-0">✕</span><span data-i18n="p1f6">Custom CMS/Backend</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p1f7">Konsultasi Gratis</span></li>
         </ul>
-        <a href="#contact" class="block text-center border-2 border-brand-border text-brand-dark font-display font-bold text-sm px-6 py-3.5 rounded-full hover:border-primary hover:text-primary transition-all duration-300">Mulai Konsultasi</a>
+        <!-- <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-3 mb-6">
+          <p class="text-[0.8rem] font-medium text-primary text-center" data-i18n="free_notice">✓ Bebas Konsultasi - Tidak ada biaya tersembunyi</p>
+        </div> -->
+        <a href="#contact" class="block text-center border-2 border-brand-border text-brand-dark font-display font-bold text-sm px-6 py-3.5 rounded-full hover:border-primary hover:text-primary transition-all duration-300" data-i18n="price_cta1">Mulai Konsultasi</a>
       </div>
-      <!-- GROWTH -->
+
+      <!-- Growth -->
       <div class="border-2 border-primary rounded-card p-8 bg-white relative hover:-translate-y-1 hover:shadow-primary transition-all duration-300">
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white font-display font-bold text-[0.65rem] uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">✦ Paling Populer</div>
-        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-primary mb-4">Professional</span>
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white font-display font-bold text-[0.65rem] uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap" data-i18n="price_popular">✦ Paling Populer</div>
+        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-primary mb-4" data-i18n="price2_tier">Professional</span>
         <h3 class="font-display text-xl font-extrabold text-brand-dark mb-1">Growth</h3>
-        <p class="text-xs text-brand-grey mb-5 leading-relaxed">Ideal untuk bisnis yang serius membangun kehadiran digital yang kuat.</p>
-        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 2,5Jt</span></div>
-        <p class="text-[0.72rem] text-slate-400 mb-6">Mulai dari · tergantung kompleksitas</p>
+        <p class="text-xs text-brand-grey mb-5 leading-relaxed" data-i18n="price2_desc">Ideal untuk bisnis yang serius membangun kehadiran digital yang kuat.</p>
+        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 2Jt</span></div>
+        <p class="text-[0.72rem] text-slate-400 mb-6" data-i18n="price_note">Mulai dari · tergantung kompleksitas</p>
         <div class="h-px bg-brand-border mb-6"></div>
         <ul class="flex flex-col gap-3 mb-8">
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Website multi-halaman (5–8 hal.)</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Desain UI/UX dari Figma</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Responsif semua device</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Hingga 7x revisi</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>SEO on-page dasar</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>CMS sederhana (Laravel/CI)</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Delivery 14–21 hari kerja</li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f1">Website multi-halaman (5–8 hal.)</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f2">Desain UI/UX dari Figma</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f3">Responsif semua device</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f4">Hingga 7x revisi</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f5">SEO on-page dasar</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f6">CMS sederhana (Laravel/CI)</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p2f7">Delivery 14–21 hari kerja</span></li>
         </ul>
-        <a href="#contact" class="block text-center bg-primary text-white font-display font-bold text-sm px-6 py-3.5 rounded-full hover:bg-primary-dark hover:-translate-y-0.5 transition-all duration-300 shadow-primary">Pilih Paket Ini</a>
+        <!-- <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-3 mb-6">
+          <p class="text-[0.8rem] font-medium text-primary text-center" data-i18n="free_notice">✓ Bebas Konsultasi - Tidak ada biaya tersembunyi</p>
+        </div> -->
+        <a href="#contact" class="block text-center bg-primary text-white font-display font-bold text-sm px-6 py-3.5 rounded-full hover:bg-primary-dark hover:-translate-y-0.5 transition-all duration-300 shadow-primary" data-i18n="price_cta2">Pilih Paket Ini</a>
       </div>
-      <!-- SCALE -->
+
+      <!-- Scale -->
       <div class="border border-brand-border rounded-card p-8 bg-white hover:-translate-y-1 hover:shadow-card transition-all duration-300">
-        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-brand-grey mb-4">Enterprise</span>
+        <span class="inline-block text-[0.65rem] font-bold uppercase tracking-widest text-brand-grey mb-4" data-i18n="price3_tier">Enterprise</span>
         <h3 class="font-display text-xl font-extrabold text-brand-dark mb-1">Scale</h3>
-        <p class="text-xs text-brand-grey mb-5 leading-relaxed">Solusi digital penuh untuk perusahaan & startup yang ingin scale cepat.</p>
-        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 7,5Jt</span></div>
-        <p class="text-[0.72rem] text-slate-400 mb-6">Mulai dari · custom sesuai kebutuhan</p>
+        <p class="text-xs text-brand-grey mb-5 leading-relaxed" data-i18n="price3_desc">Solusi digital penuh untuk perusahaan &amp; startup yang ingin scale cepat.</p>
+        <div class="mb-1"><span class="font-display text-3xl font-extrabold text-brand-dark">Rp 4Jt</span></div>
+        <p class="text-[0.72rem] text-slate-400 mb-6" data-i18n="price_note2">Mulai dari · custom sesuai kebutuhan</p>
         <div class="h-px bg-brand-border mb-6"></div>
         <ul class="flex flex-col gap-3 mb-8">
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Aplikasi web full-stack</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Desain UI/UX premium (Figma)</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>React / Laravel / CodeIgniter</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Database & REST API</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Revisi unlimited (30 hari)</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Payment gateway integration</li>
-          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>Support pasca-launch 1 bulan</li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f1">Aplikasi web full-stack</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f2">Desain UI/UX premium (Figma)</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f3">React / Laravel / CodeIgniter</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f4">Database &amp; REST API</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f5">Revisi unlimited (30 hari)</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f6">Payment gateway integration</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-brand-grey"><span class="text-primary font-bold mt-0.5 shrink-0">✓</span><span data-i18n="p3f7">Support pasca-launch 1 bulan</span></li>
         </ul>
-        <a href="#contact" class="block text-center bg-brand-dark text-white font-display font-bold text-sm px-6 py-3.5 rounded-full hover:bg-primary hover:-translate-y-0.5 transition-all duration-300">Hubungi Kami</a>
+        <!-- <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-3 mb-6">
+          <p class="text-[0.8rem] font-medium text-primary text-center" data-i18n="free_notice">✓ Bebas Konsultasi - Tidak ada biaya tersembunyi</p>
+        </div> -->
+        <a href="#contact" class="block text-center bg-brand-dark text-white font-display font-bold text-sm px-6 py-3.5 rounded-full hover:bg-primary hover:-translate-y-0.5 transition-all duration-300" data-i18n="price_cta3">Hubungi Kami</a>
       </div>
+
     </div>
-    <p class="text-center text-xs text-slate-400 mt-8">* Harga dapat berubah sesuai kebutuhan proyek. Konsultasi gratis, tidak ada biaya tersembunyi.</p>
+    <p class="text-center text-xs text-slate-400 mt-8" data-i18n="price_disclaimer">* Harga dapat berubah sesuai kebutuhan proyek. Konsultasi gratis, tidak ada biaya tersembunyi.</p>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     11. CTA
-     ═══════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════ CTA ═══ -->
 <section id="contact" class="py-20 bg-white" aria-labelledby="cta-title">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="bg-brand-dark rounded-[28px] px-14 py-20 text-center relative overflow-hidden">
+    <div class="bg-brand-dark rounded-[28px] px-8 md:px-14 py-20 text-center relative overflow-hidden">
       <div class="absolute w-56 h-56 rounded-full border border-primary/25 -top-14 -right-14 pointer-events-none"></div>
       <div class="absolute w-36 h-36 rounded-full border border-primary/15 -top-8 -right-8 pointer-events-none"></div>
       <div class="absolute w-52 h-52 rounded-full border border-primary/15 -bottom-14 -left-14 pointer-events-none"></div>
       <div class="relative z-10">
-        <p class="text-sm text-white/40 mb-3">— Let's start designing your project</p>
-        <h2 id="cta-title" class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight text-white mb-3">
-          Ready to transform your brand<br>into an irresistible style?
+        <p class="text-sm text-white/40 mb-3" data-i18n="cta_sub">— Yuk mulai desain proyekmu</p>
+        <h2 id="cta-title"
+            class="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight text-white mb-3"
+            data-i18n="cta_title">
+          Siap mengubah brand kamu<br>menjadi gaya yang tak terlupakan?
         </h2>
-        <p class="text-[0.9375rem] text-white/40 mb-9">Let's build something remarkable together.</p>
-        <a href="mailto:hello@ariondev.com" class="inline-flex items-center bg-white rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:shadow-2xl transition-all duration-300 group">
-          <span class="text-brand-dark text-base font-semibold font-body">Send a message</span>
-          <span class="w-11 h-11 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+        <p class="text-[0.9375rem] text-white/40 mb-9" data-i18n="cta_body">Mari bangun sesuatu yang luar biasa bersama.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="mailto:arionwebdev@gmail.com"
+             class="inline-flex items-center bg-white rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:shadow-2xl transition-all duration-300 group">
+            <span class="text-brand-dark text-base font-semibold font-body" data-i18n="cta_btn">Kirim pesan</span>
+            <span class="w-11 h-11 rounded-full bg-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="https://wa.me/6283876717125" target="_blank"
+             class="inline-flex items-center bg-primary rounded-full pl-7 pr-2 py-2 gap-5 hover:-translate-y-0.5 hover:shadow-2xl transition-all duration-300 group"
+             title="Contact us on WhatsApp">
+            <span class="text-white text-base font-semibold font-body" data-i18n="cta_whatsapp">Chat via WhatsApp</span>
+            <span class="w-11 h-11 rounded-full bg-white flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <img src="assets/image/icon/whatsapp.png" alt="whasapp" class="w-6 h-6">
+              <!-- <i class="fa fa-whatsapp" aria-hidden="true"></i> -->
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -820,42 +799,43 @@
 </main>
 
 
-<!-- ═══════════════════════════════════════════════════
-     12. FOOTER
-     ═══════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════ FOOTER ═══ -->
 <footer class="bg-brand-dark pt-16 pb-8" role="contentinfo">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-12">
       <div>
         <div class="flex items-center gap-2.5 mb-4">
-          <div class="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
+          <div class="w-10 h-10 rounded-xl overflow-hidden shrink-0">
             <img src="assets/image/dev.png" alt="ArioAdi Logo" class="w-full h-full object-cover" />
           </div>
           <span class="font-display font-bold text-[1.1rem] text-white">Ario<span class="text-primary">Adi</span></span>
         </div>
-        <p class="text-sm text-white/35 leading-relaxed">Crafting brands and digital experiences that leave a lasting impression.</p>
+        <p class="text-sm text-white/35 leading-relaxed" data-i18n="footer_tagline">Membuat brand dan pengalaman digital yang meninggalkan kesan mendalam.</p>
       </div>
+
       <nav aria-label="Footer navigation">
-        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide">Navigate</p>
+        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide" data-i18n="footer_nav">Navigasi</p>
         <ul class="flex flex-col gap-2.5 list-none">
-          <li><a href="#home"      class="text-sm text-white/40 hover:text-white transition-colors duration-200">Home</a></li>
-          <li><a href="#about"     class="text-sm text-white/40 hover:text-white transition-colors duration-200">About</a></li>
-          <li><a href="#services"  class="text-sm text-white/40 hover:text-white transition-colors duration-200">Services</a></li>
-          <li><a href="#portfolio" class="text-sm text-white/40 hover:text-white transition-colors duration-200">Portfolio</a></li>
-          <li><a href="#pricing"   class="text-sm text-white/40 hover:text-white transition-colors duration-200">Pricing</a></li>
+          <li><a href="#home"      class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about"     class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_about">About</a></li>
+          <li><a href="#services"  class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_services">Services</a></li>
+          <li><a href="#portfolio" class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_portfolio">Portfolio</a></li>
+          <li><a href="#pricing"   class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_pricing">Pricing</a></li>
         </ul>
       </nav>
+
       <nav aria-label="Support links">
-        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide">Support</p>
+        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide" data-i18n="footer_support">Bantuan</p>
         <ul class="flex flex-col gap-2.5 list-none">
           <li><a href="#"        class="text-sm text-white/40 hover:text-white transition-colors duration-200">FAQ</a></li>
-          <li><a href="#contact" class="text-sm text-white/40 hover:text-white transition-colors duration-200">Contact</a></li>
-          <li><a href="#"        class="text-sm text-white/40 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-          <li><a href="#"        class="text-sm text-white/40 hover:text-white transition-colors duration-200">Terms</a></li>
+          <li><a href="#contact" class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="#"        class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="footer_privacy">Kebijakan Privasi</a></li>
+          <li><a href="#"        class="text-sm text-white/40 hover:text-white transition-colors duration-200" data-i18n="footer_terms">Syarat &amp; Ketentuan</a></li>
         </ul>
       </nav>
+
       <nav aria-label="Social media links">
-        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide">Social Media</p>
+        <p class="font-display font-bold text-sm text-white mb-4 tracking-wide" data-i18n="footer_social">Media Sosial</p>
         <ul class="flex flex-col gap-2.5 list-none">
           <li><a href="#" rel="noopener noreferrer" class="text-sm text-white/40 hover:text-white transition-colors duration-200">Instagram</a></li>
           <li><a href="#" rel="noopener noreferrer" class="text-sm text-white/40 hover:text-white transition-colors duration-200">LinkedIn</a></li>
@@ -864,14 +844,16 @@
         </ul>
       </nav>
     </div>
+
     <div class="border-t border-white/[0.08] pt-6 flex justify-between items-center flex-wrap gap-3">
-      <span class="text-xs text-white/25">© 2025 ArioAdi. All rights reserved.</span>
-      <span class="text-xs text-white/25">Designed with ♥ by ArioAdi</span>
+      <span class="text-xs text-white/25" data-i18n="footer_copy">© 2026 ArioAdi. Hak cipta dilindungi.</span>
+      <span class="text-xs text-white/25" data-i18n="footer_credit">Dibuat dengan ♥ oleh ArioAdi</span>
     </div>
   </div>
 </footer>
 
 
-<script src="assets/js/main.js"></script>
+<!-- Main JS (defer — runs after DOM is ready) -->
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
