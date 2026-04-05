@@ -41,7 +41,7 @@ const i18n = {
     about_p1:     'Kami bukan sekadar desainer — kami adalah kreator, pemecah masalah, dan sahabat terbaik brand kamu. Di ArioAdi, kami hidup dan bernapas dengan desain, dari visual yang memukau hingga pengalaman digital yang mulus.',
     about_p2:     'Anggap kami sebagai perpanjangan tim kamu, siap mewujudkan ide-idemu dengan presisi, kreativitas, dan semangat.',
     about_stat:   'Rata-rata peningkatan revenue klien',
-    
+
     /* SERVICES */
     svc_tag:    'Yang kami kerjakan',
     svc_title:  'Kami mendesain yang bermakna,<br>bukan sekadar kesan pertama',
@@ -321,12 +321,12 @@ const marqueeItems = {
   hero: [
     'Web Development','UI/UX Design','Backend Dev',
     'Frontend Dev','Mobile App','REST API',
-    'Full-Stack','Brand Identity','Software Dev',
+    'Full-Stack','Software Dev',
   ],
   svc: [
-    '✦ Brand Identity','✦ Web Design','✦ UI/UX Design',
-    '✦ Product Design','✦ Frontend Dev','✦ Mobile App',
-    '✦ SEO Strategy','✦ Brand Positioning','✦ Software Dev',
+    '✦ Web Design','✦ UI/UX Design',
+    '✦ Frontend Dev','✦ Website Dev','✦ Mobile App',
+    ,'✦ Software Dev',
   ],
 };
 
